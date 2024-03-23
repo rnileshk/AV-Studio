@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="#">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+	<meta name="viewport" content="width=device-width,intial-scale=1.0">
+</head>
+<style>
+   *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: calibri;
+}
+body,html{
+	width: 100%;
+	height: 100%;
+}
+nav{
+	width: 100%;
+	height: 80px;
+}
+label.logo{
+	font-size: 35px;
+	margin: 0 100px;
+	line-height: 80px;
+}
+nav ul{
+	float: right;
+	list-style-type: none;
+}
+nav ul li{
+	display: inline-block;
+	line-height: 80px;
+}
+nav ul li a{
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+	text-transform: capitalize;
+	padding: 8px 20px;
+}
+nav ul li a.active,a:hover{
+	background: #1abc9c;
+	border-radius: 5px;
+}
+
+#checkbtn{
+	float: right;
+	line-height: 80px;
+	margin-right: 10px;
+	font-size: 30px;
+	color: black;
+	display: none;
+}
+#check{
+	display: none;
+}
+#check:checked ~ ul{
+	left: 0;
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, #b2b4b4, #d4b8bc, #53504f);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    color: black;
+    margin-top: 2rem;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    .footer{
+        display: flex;
+        flex-direction: row;
+        gap: 10rem;
+        margin: 2rem;
+        padding: 2rem;
+    }
+
+    .list{
+        font-size: 20px;
+        color: white;
+        text-align: justify;
+        text-decoration: none;
+
+        .nav-link{
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    h5{
+        font-size: 30px;
+    }
+
+    .tag{
+        text-align: center;
+    }
+}
+
+.section1{
+    background-color: gray;
+
+    .logo{
+        margin: 1rem;
+    }
+
+    .titles{
+        font-size: 60px;
+		font-family:'Times New Roman', Times, serif;
+		font-style: italic;
+    }
+}
+
+.title{
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    margin-top: 1rem;
+    background-color: gray;
+    color: white;
+    padding: 5rem;
+    display: inline-block;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+
+    h1{
+        font-size: 50px;
+    }
+
+    h3{
+        font-size: 30px;
+    }
+}
+
+h3{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.member{
+    display: flex;
+    align-items:first baseline;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    gap: 10rem;
+    width: 90%;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    position:static;
+
+    .member-image{
+        width: 300px;
+        height: 300px;
+        margin-top: 0;
+        box-shadow: 5px 5px 20px black;
+    }
+
+    .memb{
+        width: 30%;
+    }
+
+    .describe{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    h1{
+        width: 300px;
+        font-size: 30px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    h2{
+        width: 300px;
+        font-size: 25px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    p{
+        width: 300px;
+        font-size: 20px;
+        text-align: justify;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .member-image:hover{
+        transform: scale(1.1);
+        z-index: 2;
+    }
+}
+
+.loma{
+    display: flex;
+    width: 90%;
+    margin: 2rem;
+    padding: 2rem;
+    gap: 10rem;
+
+    .location{
+        width: 50%;
+        margin-right: 6rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .form{
+        width: 60%;
+        font-size: 20px;
+        background: gray;
+        border-radius: 5px;
+        text-align: center;
+
+		input{
+			font-size: 20px;
+			margin: 1rem;
+            border: 2px solid black;
+		}
+
+		textarea{
+			font-size: 20px;
+			margin: 1rem;
+            border: 2px solid black;
+		}
+
+		.btn{
+            margin: 1rem;
+            font-size: 20px;
+            background: #04AA6D;
+		}
+    }
+}
+
+.form:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+
+.location:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+
+@media(max-width: 895px){
+	.section1{
+		background-image: url("images/home_interior_home_image5.jpg");
+	}
+
+	label.logo{
+		margin:0px 70px;
+	}
+	#checkbtn{
+		display: block;
+	}
+	nav ul{
+		width: 45%;
+		height: 100vh;
+		background: rgb(179, 177, 177);
+		position: fixed;
+		top: 0;
+		z-index: 100;
+		left: -100%;
+		transition: .5s;
+	}
+	nav ul li{
+		display: block;
+		text-align: center;
+		line-height:50px;
+		margin:15px;
+	}
+
+	nav ul li:hover{
+		transform: scale(1.1);
+		z-index: 1;
+	}
+
+
+	.section1{
+        background-color: gray;
+        .titles{
+            font-size: 30px;
+	        font-family:'Times New Roman', Times, serif;
+	        font-style: italic;
+			text-align: center;
+			margin-top: 2rem;
+        }
+    }
+
+	h3{
+    font-size: 35px;
+    margin-top: 2rem;
+}
+
+.member{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+	justify-content: center;
+	align-items: center;
+    gap: 2rem;
+	width: 30%;
+
+    .member-image{
+        width: 300px;
+        height: 300px;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		margin-top: 1rem;
+        box-shadow: 5px 5px 20px black;
+    }
+
+    .describe{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    h1{
+        width: 300px;
+        font-size: 20px;
+        }
+
+        h2{
+        width: 300px;
+        font-size: 25px;
+        }
+
+    p{
+        width: 300px;
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    .member-image:hover{
+        transform: scale(1.1);
+        z-index: 2;
+    }
+}
+
+.loma{
+    display: grid;
+    width: 10%;
+
+    .location{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .form{
+        width: 100%;
+        font-size: 20px;
+
+		input{
+			font-size: 20px;
+		}
+
+		textarea{
+			font-size: 20px;
+		}
+
+		.btn{
+			font-size: 20px;
+		}
+    }
+}
+
+.form:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+
+.location:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+
+}
+
+</style>
+<body>
+	
+	<div class="section1">
+		<nav>
+			<input type="checkbox" id="check" name="" value="">
+			<label for="check" id="checkbtn"><i class="fa fa-bars"></i></label>
+			<label class="logo"><img src="/images/logo.jpg" alt="logo" height="100px" width="150px"></label>
+			<ul>
+				<li><a class="active" href="/index.html">HOME</a></li>
+				<li><a href="/pages/about-us.html">ABOUT US</a></li>
+				<li><a href="/pages/Residential-design.html">RESIDENTIAL DESIGN</a></li>
+				<li><a href="/pages/Corporate-design.html">CORPORATE DESIGN</a></li>
+				<li><a href="/pages//Contact-Us.html">CONTACT US</a></li>
+			</ul>
+		</nav>
+
+		<div class="titles">
+            <marquee><h1>Contact Us</h1></marquee>
+        </div>
+
+        <div class="title">
+            <h1>Contact Us</h1>
+            <h3>We are open from Monday to Saturday 10:00 AM To 07:00 PM</h3>
+        </div>
+    </div>
+
+	<h3>Members of AV Studio</h3>
+
+    <div class="member">
+        <div class="memb">
+            <img class="member-image" src="/images/suryanshu.jpg" alt="SURYANSHU" />
+            <div class="describe">
+                <h1>Founder & CMD</h1>
+                <h2>SURYANSHU MAHAJAN</h2>
+                <p>A managing director manages the company, leads, takes major decisions, sets strategy and directions. His hard work and decisions play an important role in achieving great heights.A managing director manages the company, leads, takes major decisions, sets strategy and directions. His hard work and decisions play an important role in achieving great heights.</p>
+            </div>
+        </div>
+
+        <div class="memb">
+            <img class="member-image" src="/images/divya.jpg" alt="divya" />
+            <div class="describe">
+                <h1>Architect & Interior Designer</h1>
+                <h2>DIVYA MAHAJAN</h2>
+                <p>An Architect, or Architectural Designer, is responsible for designing buildings to create unique and well-organized structures. </p>
+            </div>
+        </div>
+
+        <div class="memb">
+            <img class="member-image" src="/images/anil.jpeg" alt="anil" />
+            <div class="describe">
+                <h1>Architect & Interior Designer</h1>
+                <h2>ANIL KUMAR GUPTA</h2>
+                <p>An Architect, or Architectural Designer, is responsible for designing buildings to create unique and well-organized structures. </p>
+            </div>
+        </div>
+    </div>
+
+	<div class="loma">
+        <div class="form">
+            <h1>SEND US A MESSAGE:</h1>
+            <form action="https://api.web3forms.com/submit" method="POST" method="POST">
+                <input type="hidden" name="access_key" value="2295bfcd-fd54-44ef-ad22-c8d2ed0a1524">
+                <p><span class="inputs wpcf7-form-control-wrap" data-name="your-name"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your name" value="" type="text" name="your-name" required></span>
+                </p>
+                <p><span class="inputs wpcf7-form-control-wrap" data-name="your-email"><input size="40" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Your e-mail" value="" type="email" name="your-email" required></span>
+                </p>
+                <p><span class="inputs wpcf7-form-control-wrap" data-name="your-text"><input size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Mobile No." value="" type="text" name="your-text" required></span>
+                </p>
+                <p><span class="inputs wpcf7-form-control-wrap" data-name="your-message"><textarea cols="41" rows="6" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Message" name="your-message" required></textarea></span>
+                </p>
+                <button class="btn" type="submit">SEND US</button>
+            </form>
+        </div>
+
+        <div class="location">
+            <h1>WE ARE LOCATED IN:</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234447.15550731614!2d85.15650935752082!3d23.34343382016616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e104aa5db7dd%3A0xdc09d49d6899f43e!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1711038379757!5m2!1sen!2sin" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+	<footer class="gradient-background">
+        <div class="footer">
+            <div class="col mb-lg-4">
+                <h5>Useful Links</h5>
+                <ul class="list nav flex-column">
+                    <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 text-white">Home</a></li>
+                        <li class="nav-item mb-2"><a href="/pages/about-us.html" class="nav-link p-0 text-white">About Us</a></li>
+                        <li class="nav-item mb-2"><a href="/pages/Residential-design.html" class="nav-link p-0 text-white">Residential Design</a></li>
+                        <li class="nav-item mb-2"><a href="/pages/Corporate-design.html" class="nav-link p-0 text-white">Corporate Design</a></li>
+                        <li class="nav-item mb-2"><a href="/pages/Contact-Us.html" class="nav-link p-0 text-white">Contact Us</a></li>
+                    </ul>
+            </div>
+        
+            <div class="col mb-lg-4">
+                <h5>Social Profile</h5>
+                <ul class="list nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Facebook</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Instagram</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Twitter</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Whatsapp</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Others</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tag">
+            <p class="text-body-secondary">©AV Studio | 2024</p>
+        </div>
+    </footer>
+</body>
+</html>

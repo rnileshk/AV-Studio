@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="#">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width,intial-scale=1.0">
+</head>
+<style>
+   *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: calibri;
+}
+body,html{
+	width: 100%;
+	height: 100%;
+}
+nav{
+	width: 100%;
+	height: 80px;
+}
+label.logo{
+	font-size: 35px;
+	margin: 0 100px;
+	line-height: 80px;
+}
+nav ul{
+	float: right;
+	list-style-type: none;
+}
+nav ul li{
+	display: inline-block;
+	line-height: 80px;
+}
+nav ul li a{
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+	text-transform: capitalize;
+	padding: 8px 20px;
+}
+nav ul li a.active,a:hover{
+	background: #1abc9c;
+	border-radius: 5px;
+}
+
+#checkbtn{
+	float: right;
+	line-height: 80px;
+	margin-right: 10px;
+	font-size: 30px;
+	color: black;
+	display: none;
+}
+#check{
+	display: none;
+}
+#check:checked ~ ul{
+	left: 0;
+}
+
+.section1{
+    background-color: gray;
+    height: 300px;
+    .title h1{
+        font-size: 60px;
+		font-family:'Times New Roman', Times, serif;
+		font-style: italic;
+        font-weight: 600;
+    }
+}
+
+.about{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    width: 100%;
+    padding: 3rem;
+
+    .lines{
+        margin-top: 4rem;
+        margin-right: 1rem;
+
+        h2{
+        font-size: 30px;
+        font-weight: 600;
+        width: 100%;
+        font-family:'Courier New', Courier, monospace;
+        }
+
+        p{
+            font-size: 22px;
+            width: 100%;
+            text-align: justify;
+            margin-top: 2rem;
+            font-family:serif;
+            font-weight: 300;
+            font-family:'Times New Roman', Times, serif;
+        }
+    }
+}
+.image1:hover{
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.cardhead{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 180px;
+    height: 380px;
+    margin: 50px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+}
+
+.card-image{
+    height: 200px;
+    width: 180px;
+    border-radius: 3rem;
+}
+
+.intro{
+    height: 180px;
+    width: 170px;
+    box-sizing: border-box;
+    background: rgba(19, 18, 18, 0.5);
+    color: white;
+
+    h1{
+        font-size: 30px;
+    }
+
+    p{
+        visibility: hidden;
+    }
+}
+span{
+    font-weight: bold;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card:hover .intro{
+    height: 200px;
+    background: black;
+}
+
+.card:hover p{
+    opacity: 1;
+    visibility: visible;
+}
+
+.card:hover{
+    transform: scale(1.3);
+    z-index: 2;
+}
+
+h3{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.member{
+    display: flex;
+    align-items:first baseline;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    gap: 10rem;
+    width: 90%;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    position:static;
+
+    .member-image{
+        width: 300px;
+        height: 300px;
+        margin-top: 0;
+        box-shadow: 5px 5px 20px black;
+    }
+
+    .memb{
+        width: 30%;
+    }
+
+    .describe{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    h1{
+        width: 300px;
+        font-size: 30px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    h2{
+        width: 300px;
+        font-size: 25px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    p{
+        width: 300px;
+        font-size: 20px;
+        text-align: justify;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .member-image:hover{
+        transform: scale(1.1);
+        z-index: 2;
+    }
+}
+
+.fa-qn{
+    margin-top: 4rem;
+    margin-left: 10rem;
+
+    h1{
+        color: blue;
+        font-weight: bolder;
+        font-size: 50px;
+    }
+}
+
+.pannel{
+    max-height: 0;
+    overflow: hidden;
+    gap: 2rem;
+}
+
+.pannel p {
+    background-color: none;
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 1.3rem;
+    color: black;
+    width: 85%;
+    margin-left: 8rem;
+    display: flex;
+    padding: 0 2rem;
+    justify-content: space-between;
+    align-items: left;
+    font-weight: lighter;
+    font-family: sans-serif;
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+.faq.active .pannel {
+    max-height: 300px;
+}
+
+.accordion{
+    background-color: rgb(240, 239, 239);
+    color: rgba(0,0,0,.8);
+    cursor: pointer;
+    font-size: 1.4rem;
+    margin-left: 8rem;
+    width: 85%;
+    padding: 1rem 2.5rem;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+.accordion i {
+    font-size: 1.6rem;
+}
+
+.faq {
+    margin-top: .3rem;
+}
+
+.forcontact{
+    background-color: gray;
+    width: 100%;
+    height: 160px;
+    margin-top: 2rem;
+    border: 2px solid black;
+    justify-content: center;
+
+    h1{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .btn{
+        width: 200px;
+        padding: 2rem;
+        margin-left: 43%;
+        background-color: #04AA6D;
+        border: 2px solid black;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
+    }
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, #b2b4b4, #d4b8bc, #53504f);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    color: black;
+    margin-top: 2rem;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    .footer{
+        display: flex;
+        flex-direction: row;
+        gap: 10rem;
+        margin: 2rem;
+        padding: 2rem;
+    }
+
+    .list{
+        font-size: 20px;
+        color: white;
+        text-align: justify;
+        text-decoration: none;
+
+        .nav-link{
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    h5{
+        font-size: 30px;
+    }
+
+    .tag{
+        text-align: center;
+        font-weight: bolder;
+    }
+}
+
+@media(max-width: 895px){
+	.section1{
+		background-image: url("images/home_interior_home_image5.jpg");
+	}
+
+	label.logo{
+		margin:0px 70px;
+	}
+	#checkbtn{
+		display: block;
+	}
+	nav ul{
+		width: 53%;
+		height: 100vh;
+		background: rgb(179, 177, 177);
+		position: fixed;
+		top: 0px;
+		z-index: 100;
+		left: -100%;
+		transition: .5s;
+	}
+	nav ul li{
+		display: block;
+		text-align: center;
+		line-height:50px;
+		margin:15px;
+	}
+
+	nav ul li:hover{
+		transform: scale(1.1);
+		z-index: 1;
+	}
+
+    .section1{
+    background-color: gray;
+    .title h1{
+        font-size: 60px;
+        margin-top: 2rem;
+		font-family:'Times New Roman', Times, serif;
+		font-style: italic;
+        font-weight: 700;
+    }
+}
+
+    
+    .about{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+    padding: 3rem;
+
+    .image1{
+        height: 500px;
+    }
+
+    .lines{
+        margin-top: 1rem;
+        margin-right: 1rem;
+
+        h2{
+        font-size: 30px;
+        font-weight: 600;
+        width: 100%;
+        font-family:'Courier New', Courier, monospace;
+        }
+
+        p{
+            font-size: 22px;
+            width: 100%;
+            text-align: justify;
+            margin-top: 2rem;
+            font-family:serif;
+            font-weight: 300;
+            font-family:'Times New Roman', Times, serif;
+        }
+    }
+}
+
+.image1:hover{
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+.cardhead{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 180px;
+    height: 380px;
+    margin: 40px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+}
+
+.card-image{
+    height: 200px;
+    width: 180px;
+    border-radius: 3rem;
+}
+
+.intro{
+    height: 180px;
+    width: 180px;
+    box-sizing: border-box;
+    background: rgba(19, 18, 18, 0.5);
+    color: white;
+
+    p{
+        visibility: hidden;
+        margin: 0 .4rem;
+    }
+}
+span{
+    font-weight: bold;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card:hover .intro{
+    height: 200px;
+    background: black;
+}
+
+.card:hover p{
+    opacity: 1;
+    visibility: visible;
+}
+
+.card:hover{
+    transform: scale(1.3);
+    z-index: 2;
+}
+
+h3{
+    font-size: 35px;
+    margin-top: 2rem;
+}
+
+.member{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+	justify-content: center;
+	align-items: center;
+    gap: 2rem;
+	width: 30%;
+
+    .member-image{
+        width: 300px;
+        height: 300px;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		margin-top: 1rem;
+        box-shadow: 5px 5px 20px black;
+    }
+
+    .describe{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    h1{
+        width: 300px;
+        font-size: 20px;
+        }
+
+        h2{
+        width: 300px;
+        font-size: 25px;
+        }
+
+    p{
+        width: 300px;
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    .member-image:hover{
+        transform: scale(1.1);
+        z-index: 2;
+    }
+}
+.fa-qn{
+    max-width: fit-content;
+    min-width: fit-content;
+    margin: 2rem;
+
+    h1{
+        color: blue;
+        font-weight: bolder;
+        font-size: 30px;
+    }
+}
+
+
+    .faskq{
+        margin: 0;
+        width: 90%;
+    }
+
+.forcontact{
+    background-color: gray;
+    width: 100%;
+    height: 200px;
+    margin-top: 2rem;
+    border: 2px solid black;
+    justify-content: center;
+
+    h1{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .btn{
+        width: 200px;
+        padding: 2rem;
+        margin-left: 30%;
+        background-color: #04AA6D;
+        border: 2px solid black;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
+    }
+}
+
+
+}
+
+</style>
+<body>
+	
+	<div class="section1">
+		<nav>
+			<input type="checkbox" id="check" name="" value="">
+			<label for="check" id="checkbtn"><i class="fa fa-bars"></i></label>
+			<label class="logo"><img src="/images/logo.jpg" alt="logo" height="100px" width="150px"></label>
+			<ul>
+				<li><a class="active" href="/index.html">HOME</a></li>
+				<li><a href="/pages/about-us.html">ABOUT US</a></li>
+				<li><a href="/pages/Residential-design.html">RESIDENTIAL DESIGN</a></li>
+				<li><a href="/pages/Corporate-design.html">CORPORATE DESIGN</a></li>
+				<li><a href="/pages//Contact-Us.html">CONTACT US</a></li>
+			</ul>
+			
+		</nav>
+
+        <div class="title">
+            <marquee><h1>About Us</h1></marquee>
+        </div>
+    </div>
+
+    <div class="about">
+        <img class="image1" src="/images/about-us.jpg" height="700px" alt="about-us" />
+        <div class="lines">
+            <h2>How High Creation Interior Came into Existence?</h2>
+            <p>AV Studio is presently one of the best interior designers in Ranchi offering custom interior solutions for residential and commercial spaces. Our dedicated team of interior designers and decorators help our clients envision, plan, and implement design ideas to create fully functional yet aesthetically beautiful spaces.</p>
+            <p>Since 2019, we as the best interior design company have been given the opportunity to accommodate our clients by adorning their houses and apartments with the design aesthetic, grace, sophistication, and comfort that embodies the character of individuals residing in them. Being a pioneer in the architectural and interior sector, we realize the importance of building genuine, long-term rapport with customers, and we relish the opportunity to design their dream houses.</p>
+            <p>Our skilled design team is powered by quality and excellence and will respect your personal style and functional requirements while leading you through the journey and surpassing your expectations.</p>
+        </div>
+    </div>
+
+    <div class="cardhead">
+        <div class="card">
+            <img class="card-image" src="/images/satisfaction.png" alt="satisfaction" />
+            <div class="intro">
+                <h1>100% Customer Satisfaction</h1>
+                <p>Your happiness is our ultimate measure of success.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-image" src="/images/done.png" alt="project" />
+            <div class="intro">
+                <h1>150+ Projects Done</h1>
+                <p>Proven expertise through numerous successful design projects.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-image" src="/images/quality-control.png" alt="quality-control" />
+            <div class="intro">
+                <h1>High-Quality Working Process</h1>
+                <p>We deliver precision and excellence in every detail.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-image" src="/images/award.png" alt="award" />
+            <div class="intro">
+                <h1>5+ Years of Experience</h1>
+                <p>A decade of design mastery at your service.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-image" src="/images/approach.png" alt="approach" />
+            <div class="intro">
+                <h1>Client-Centric Approach</h1>
+                <p>We believe that customers come first.</p>
+            </div>
+        </div>
+    </div>
+
+    <h3>Members of AV Studio</h3>
+
+    <div class="member">
+        <div class="memb">
+            <img class="member-image" src="/images/suryanshu.jpg" alt="SURYANSHU" />
+            <div class="describe">
+                <h1>Founder & CMD</h1>
+                <h2>SURYANSHU MAHAJAN</h2>
+                <p>A managing director manages the company, leads, takes major decisions, sets strategy and directions. His hard work and decisions play an important role in achieving great heights.A managing director manages the company, leads, takes major decisions, sets strategy and directions. His hard work and decisions play an important role in achieving great heights.</p>
+            </div>
+        </div>
+
+        <div class="memb">
+            <img class="member-image" src="/images/divya.jpg" alt="divya" />
+            <div class="describe">
+                <h1>Architect & Interior Designer</h1>
+                <h2>DIVYA MAHAJAN</h2>
+                <p>An Architect, or Architectural Designer, is responsible for designing buildings to create unique and well-organized structures. </p>
+            </div>
+        </div>
+
+        <div class="memb">
+            <img class="member-image" src="/images/anil.jpeg" alt="anil" />
+            <div class="describe">
+                <h1>Architect & Interior Designer</h1>
+                <h2>ANIL KUMAR GUPTA</h2>
+                <p>An Architect, or Architectural Designer, is responsible for designing buildings to create unique and well-organized structures. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="fa-qn">
+        <h1>FREQUENTLY ASKED QUESTIONS</h1>
+    </div>
+
+    <div class="faskq">
+        <div class="faq">
+            <button class="accordion">
+                01. What are the services you offer, why should I choose you?
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="pannel">
+                <p>Our services include custom furniture, false ceiling, flooring, plumbing, electrical, designing, and more. We deliver high-quality products at a very affordable rate because we have 100% in-house work and we do regular quality checks, though we provide you with free maintenance also.</p>
+            </div>
+        </div>
+    
+        <div class="faq">
+            <button class="accordion">
+                02. Do you charge design Fees?
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="pannel">
+                <p>At AV Studio, we bring together functionality and aesthetics to provide homeowners with customised and efficient home designs. Our designers specialise in home interior designs and home decor and help you create a personalised home to suit your lifestyle. From sophisticated living room designs to space-saving and clutter-free interior designs, we are here to help you find the best home decor and design to match your needs and style. Our products come with up to a 10-year warranty, unwavering support, and maintenance services. Explore thousands of inspiring interior designs or get a free estimate – it’s all here on aandvstudio.com, you’re a one-stop for complete home interiors.</p>
+            </div>
+        </div>
+    
+        <div class="faq">
+            <button class="accordion">
+                03. What is your work process?
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="pannel">
+                <p>First, meet with our designer, they will help you out from costing to designing for your complete house, then finalize your project, start the production process then the phase of installation comes you will get your home interiors done eventually !!</p>
+            </div>
+        </div>
+    
+        <div class="faq">
+            <button class="accordion">
+                04. What services do you offer for luxury office interior design?
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="pannel">
+                <p>We offer a wide range of services for luxury office interior design, including space planning, furniture selection, lighting design, colour coordination, and project management.</p>
+            </div>
+        </div>
+    
+        <div class="faq">
+            <button class="accordion">
+                05. How do you ensure that the design meets our brand’s aesthetic and functional needs?
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="pannel">
+                <p>We work closely with our clients to understand their brand’s aesthetic and functional needs. We’ll provide design concepts and options that reflect their brand’s identity and meet their specific needs.</p>
+            </div>
+        </div>
+    
+        <div class="faq">
+            <button class="accordion">
+                06. Can you work with existing layouts or do you prefer to start from scratch?
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="pannel">
+                <p>We can work with existing layouts or start from scratch, depending on the client’s needs and preferences. We’ll provide recommendations for layout and furniture placement that work within the constraints of the space.</p>
+            </div>
+        </div>
+    
+        <div class="faq">
+            <button class="accordion">
+                07. What types of materials do you use in corporate and home interior design?
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="pannel">
+                <p>We use a variety of materials in our corporate and home interior designs, including wood, metal, stone, glass, and fabric. We’ll select materials that fit the design style and function of the space and that are within the client’s budget.</p>
+            </div>
+        </div>
+    
+        <div class="wraper">
+            <div class="faq">
+                <button class="accordion">
+                    08. Can you provide 3D renderings of my design plan?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="pannel">
+                    <p>Yes, we can provide 3D renderings of your design plan to help you visualize the final result. This is a helpful tool for clients who want to see how the space will look before any work begins.</p>
+                </div>
+            </div>
+        
+            <div class="faq">
+                <button class="accordion">
+                    09. Can you work within my budget?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="pannel">
+                    <p>Yes, we’ll work within your budget to create a design plan that meets your needs and fits your financial constraints. We’ll provide detailed estimates for all services and materials, and we’ll work with you to prioritize the most important design elements within your budget.</p>
+                </div>
+            </div>
+        
+            <div class="faq">
+                <button class="accordion">
+                    10. How do I get started with an interior design project?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="pannel">
+                    <p>To get started with an interior design project, you can contact us through our website or give us a call. We’ll schedule an initial consultation to discuss your design goals, budget, and timeline. From there, we’ll work together to create a design plan that meets your needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="forcontact">
+        <h1>To hire us please go to the contact option to contact me.</h1>
+        <a class="btn" href="/pages/Contact-Us.html">Contact Us</a>
+    </div>
+
+    <footer class="gradient-background">
+        <div class="footer">
+            <div class="col mb-lg-4">
+                <h5>Useful Links</h5>
+                <ul class="list nav flex-column">
+                    <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 text-white">Home</a></li>
+                        <li class="nav-item mb-2"><a href="/pages/about-us.html" class="nav-link p-0 text-white">About Us</a></li>
+                        <li class="nav-item mb-2"><a href="/pages/Residential-design.html" class="nav-link p-0 text-white">Residential Design</a></li>
+                        <li class="nav-item mb-2"><a href="/pages/Corporate-design.html" class="nav-link p-0 text-white">Corporate Design</a></li>
+                        <li class="nav-item mb-2"><a href="/pages/Contact-Us.html" class="nav-link p-0 text-white">Contact Us</a></li>
+                    </ul>
+            </div>
+        
+            <div class="col mb-lg-4">
+                <h5>Social Profile</h5>
+                <ul class="list nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Facebook</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Instagram</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Twitter</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Whatsapp</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Others</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tag">
+            <p>©AV Studio | 2024</p>
+        </div>
+    </footer>
+    
+
+    <script>
+        const faqs = document.querySelectorAll(".faq");
+
+            faqs.forEach(faq => {
+                faq.addEventListener("click", () => {
+                faq.classList.toggle("active");
+            });
+        });
+    </script>
+
+</body>
+</html>

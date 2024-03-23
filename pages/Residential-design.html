@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="#">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+	<meta name="viewport" content="width=device-width,intial-scale=1.0">
+</head>
+<style>
+   *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: calibri;
+}
+body,html{
+	width: 100%;
+	height: 100%;
+}
+nav{
+	width: 100%;
+	height: 80px;
+}
+label.logo{
+	font-size: 35px;
+	margin: 0 100px;
+	line-height: 80px;
+}
+nav ul{
+	float: right;
+	list-style-type: none;
+}
+nav ul li{
+	display: inline-block;
+	line-height: 80px;
+}
+nav ul li a{
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+	text-transform: capitalize;
+	padding: 8px 20px;
+}
+nav ul li a.active,a:hover{
+	background: #1abc9c;
+	border-radius: 5px;
+}
+
+#checkbtn{
+	float: right;
+	line-height: 80px;
+	margin-right: 10px;
+	font-size: 30px;
+	color: black;
+	display: none;
+}
+#check{
+	display: none;
+}
+#check:checked ~ ul{
+	left: 0;
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, #b2b4b4, #d4b8bc, #53504f);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    color: black;
+    margin-top: 2rem;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    .footer{
+        display: flex;
+        flex-direction: row;
+        gap: 10rem;
+        margin: 2rem;
+        padding: 2rem;
+    }
+
+    .list{
+        font-size: 20px;
+        color: white;
+        text-align: justify;
+        text-decoration: none;
+
+        .nav-link{
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    h5{
+        font-size: 30px;
+    }
+
+    .tag{
+        text-align: center;
+		font-weight: bolder;
+    }
+}
+
+.section1{
+    background-color: gray;
+    height: 300px;
+    .title h1{
+        font-size: 60px;
+		font-family:'Times New Roman', Times, serif;
+		font-style: italic;
+    }
+}
+
+.data{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    width: 100%;
+    padding: 3rem;
+    margin-right: 10%;
+
+    p{
+        font-size: 20px;
+        width: 100%;
+        text-align: justify;
+        margin-top: 2rem;
+        font-weight: 600;
+        font-family:'Times New Roman', Times, serif;
+    }
+}
+
+.data .image1:hover{
+	transform: scale(1.1);
+	z-index: 1;
+}
+
+.finish-project{
+    width: 100%;
+
+    h1{
+        text-align: center;
+        width: 100%;
+        font-size: 40px;
+        font-weight: 600;
+        margin-bottom: 2rem;
+		text-decoration: underline;
+    }
+}
+
+.container{
+    position: relative;
+
+    .image-container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 2rem;
+        justify-content: center;
+
+        .images{
+            height: 332px;
+            width: 550px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.1);
+            overflow: hidden;
+            cursor: pointer;
+		    border: 5px solid rgb(31, 43, 43);
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+
+            }
+        }
+    }
+}
+
+.container .image-container .images:hover img{
+    transform: scale(1.1);
+}
+
+.forcontact{
+    background-color: gray;
+    width: 100%;
+    height: 150px;
+    margin-top: 2rem;
+    border: 2px solid black;
+    justify-content: center;
+
+    h1{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .btn{
+        width: 200px;
+        padding: 2rem;
+        margin-left: 43%;
+        background-color: #04AA6D;
+        border: 2px solid black;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
+    }
+}
+
+@media(max-width: 895px){
+	.section1{
+		background-image: url("images/home_interior_home_image5.jpg");
+	}
+
+	label.logo{
+		margin:0px 70px;
+	}
+	#checkbtn{
+		display: block;
+	}
+	nav ul{
+		width: 53%;
+		height: 100vh;
+		background: rgb(179, 177, 177);
+		position: fixed;
+		top: 0px;
+		z-index: 100;
+		left: -100%;
+		transition: .5s;
+	}
+	nav ul li{
+		display: block;
+		text-align: center;
+		line-height:50px;
+		margin:15px;
+	}
+
+	nav ul li:hover{
+		transform: scale(1.1);
+		z-index: 1;
+	}
+
+
+	.section1{
+        background-color: gray;
+        .title{
+            font-size: 30px;
+	        font-family:'Times New Roman', Times, serif;
+	        font-style: italic;
+			text-align: center;
+			margin-top: 2rem;
+        }
+    }
+
+	.data{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        padding: 2rem;
+
+        p{
+            font-size: 20px;
+            width: 100%;
+            text-align: justify;
+            margin-top: 2rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-family:'Times New Roman', Times, serif;
+        }
+    }
+
+	.forcontact{
+    background-color: gray;
+    width: 100%;
+    height: 200px;
+    margin-top: 2rem;
+    border: 2px solid black;
+    justify-content: center;
+
+    h1{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .btn{
+        width: 200px;
+        padding: 2rem;
+        margin-left: 31%;
+        background-color: #04AA6D;
+        border: 2px solid black;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
+    }
+}
+}
+
+</style>
+<body>
+	
+	<div class="section1">
+		<nav>
+			<input type="checkbox" id="check" name="" value="">
+			<label for="check" id="checkbtn"><i class="fa fa-bars"></i></label>
+			<label class="logo"><img src="/images/logo.jpg" alt="logo" height="100px" width="150px"></label>
+			<ul>
+				<li><a class="active" href="/index.html">HOME</a></li>
+				<li><a href="/pages/about-us.html">ABOUT US</a></li>
+				<li><a href="/pages/Residential-design.html">RESIDENTIAL DESIGN</a></li>
+				<li><a href="/pages/Corporate-design.html">CORPORATE DESIGN</a></li>
+				<li><a href="/pages//Contact-Us.html">CONTACT US</a></li>
+			</ul>
+		</nav>
+
+		<div class="title">
+            <marquee><h1>Residential Design</h1></marquee>
+        </div>
+    </div>
+
+	<div class="data">
+        <img class="image1" src="/images/about-us.jpg" height="600px" alt="about-us" />
+        <div>
+            <p>A home that brings warmth starts with a pleasurable interior. Interior plays an enormous role in maintaining the serenity of every establishment whether it is a corporate office or a personal residence, Interior is the key. There’s a massive demand for Residential Interior Decorators in Delhi. Being able to keep one’s home in sync with all the modern trends while looking its best is a significant need of the hour.</p>
+            <p>In such times, we, at latest Interiors have taken it upon ourselves to provide you the Best Interior Designers in Delhi to all who require it. Your residence is something that needs your attention and is a statement of your comfort that not only makes you feel satisfied but also let your guests judge you through the interiors of your home.</p>
+            <p>If you are looking for the residential interior services in Delhi NCR, then you have arrived at just the right place. At Latest Interiors we conceptualize interiors that combine the most elegant space planning and offer you the perfect interiors for your residence. Starting from the scratch we have full bucket of services to cater to your needs ranging from furniture and fixtures and work on the simple principle you ask it and we provide it.</p>
+        </div>
+    </div>
+
+	<div class="finish-project">
+        <h1>Finished Projects</h1>
+    </div>
+
+	<div class="container">
+        <div class="image-container">
+            <a href="/images/1.jpg" class="images residential">
+                <img src="/images/1.jpg" alt="image">
+            </a>
+
+            <a href="/images/2.jpg" class="images residential">
+                <img src="/images/2.jpg" alt="image">
+            </a>
+
+            <a href="/images/3.jpg" class="images residential">
+                <img src="/images/3.jpg" alt="image">
+            </a>
+
+            <a href="/images/4.jpg" class="images residential">
+                <img src="/images/4.jpg" alt="image">
+            </a>
+
+            <a href="/images/5.jpg" class="images residential">
+                <img src="/images/5.jpg" alt="image">
+            </a>
+
+            <a href="/images/6.jpg" class="images residential">
+                <img src="/images/6.jpg" alt="image">
+            </a>
+
+            <a href="/images/7.jpg" class="images residential">
+                <img src="/images/7.jpg" alt="image">
+            </a>
+
+            <a href="/images/8.jpg" class="images residential">
+                <img src="/images/8.jpg" alt="image">
+            </a>
+
+            <a href="/images/9.jpg" class="images residential">
+                <img src="/images/9.jpg" alt="image">
+            </a>
+
+            <a href="/images/10.jpg" class="images residential">
+                <img src="/images/10.jpg" alt="image">
+            </a>
+
+            <a href="/images/11.jpg" class="images residential">
+                <img src="/images/11.jpg" alt="image">
+            </a>
+
+            <a href="/images/12.jpg" class="images residential">
+                <img src="/images/12.jpg" alt="image">
+            </a>
+
+            <a href="/images/13.jpg" class="images residential">
+                <img src="/images/13.jpg" alt="image">
+            </a>
+
+            <a href="/images/14.jpg" class="images residential">
+                <img src="/images/14.jpg" alt="image">
+            </a>
+
+            <a href="/images/15.jpg" class="images residential">
+                <img src="/images/15.jpg" alt="image">
+            </a>
+
+            <a href="/images/16.jpg" class="images residential">
+                <img src="/images/16.jpg" alt="image">
+            </a>
+        </div>
+    </div>
+
+	<div class="forcontact">
+        <h1>To hire us please go to the contact option to contact me.</h1>
+        <a class="btn" href="/pages/Contact-Us.html">Contact Us</a>
+    </div>
+
+	<footer class="gradient-background">
+        <div class="footer">
+            <div class="col mb-lg-4">
+                <h5>Useful Links</h5>
+                <ul class="list nav flex-column">
+                    <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 text-white">Home</a></li>
+                        <li class="nav-item mb-2"><a href="/pages/about-us.html" class="nav-link p-0 text-white">About Us</a></li>
+                        <li class="nav-item mb-2"><a href="/pages/Residential-design.html" class="nav-link p-0 text-white">Residential Design</a></li>
+                        <li class="nav-item mb-2"><a href="/pages/Corporate-design.html" class="nav-link p-0 text-white">Corporate Design</a></li>
+                        <li class="nav-item mb-2"><a href="/pages/Contact-Us.html" class="nav-link p-0 text-white">Contact Us</a></li>
+                    </ul>
+            </div>
+        
+            <div class="col mb-lg-4">
+                <h5>Social Profile</h5>
+                <ul class="list nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Facebook</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Instagram</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Twitter</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Whatsapp</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Others</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tag">
+            <p class="text-body-secondary">©AV Studio | 2024</p>
+        </div>
+    </footer>
+</body>
+</html>
